@@ -3,9 +3,11 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "../src/pages/Home/Home";
 import Cart from "../src/pages/Cart/Cart";
 import PlaceOrder from "../src/pages/PlaceOrder/PlaceOrder";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
+    <>
     <div className=" h-auto max-w-full mx-28 ">
       <Navbar />
       <Routes>
@@ -14,6 +16,8 @@ function App() {
         <Route path="/placeorder" element={<PlaceOrder />} />
       </Routes>
     </div>
+    <Footer />
+    </>
   );
 }
 
