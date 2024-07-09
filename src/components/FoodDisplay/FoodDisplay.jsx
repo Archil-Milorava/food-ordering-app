@@ -8,12 +8,12 @@ function FoodDisplay({ category }) {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6">Top dishes near you</h2>
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-4 gap-10 ">
         {food_list.map((item, index) => {
           const { _id, name, description, price, image } = item;
 
-          return (
-            <FoodItem
+          if(category === "All" || category === item.category) {
+            return  <FoodItem
               key={index}
               id={_id}
               name={name}
@@ -21,7 +21,8 @@ function FoodDisplay({ category }) {
               price={price}
               image={image}
             />
-          );
+          }
+      
         })}
       </div>
     </div>
